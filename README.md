@@ -107,7 +107,7 @@ multiple share buttons on a single page and bind the share count to the respecti
 Google +
 ----
 ```html
- <div gplus class="g-plus" data-size="tall" data-annotation="vertical-bubble" data-href='http://test.bondswell.com' data-action='share'></div>
+ <div gplus class="g-plus" data-size="tall" data-annotation="vertical-bubble" data-href='http://google.com' data-action='share'></div>
 ```
 For more information on the share button attributes check the [Google Share Documentation]
 >If you change the class of the button to `g-plusone' it will be converted to a google plus one button.
