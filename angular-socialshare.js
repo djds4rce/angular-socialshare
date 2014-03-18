@@ -22,7 +22,6 @@ angular.module('djds4rce.angular-socialshare', [])
           });
         };
         (function(d){
-          console.log('a');
           var js,           
           id = 'facebook-jssdk', 
           ref = d.getElementsByTagName('script')[0];
