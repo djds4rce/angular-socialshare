@@ -22,7 +22,7 @@ IMPORTANT
 ----
 For Correct Sharing of links and updating share count you must enable HTML5 Mode True for your application. i.e No `#` in URL'S .
 ```js
-angular.module('testing).config(function($locationProvider){
+angular.module('testing').config(function($locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
 });
 ```
