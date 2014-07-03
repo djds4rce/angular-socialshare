@@ -31,7 +31,7 @@ HTML5 Mode requires server configration [Explained Here]
 
 Share on Facebook
 ----
-Facebook share uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your appplication.
+Facebook share uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your appplication. Note that you will get an error regarding 'not permitted URL' if you are testing this button in a localhost environment.
 
 ```js
 angular.module('testing').run(function($FB){
@@ -40,20 +40,14 @@ angular.module('testing').run(function($FB){
 ```
 Use the Facebook Directive
 ```html
- <div facebook data-name='Fb Share' data-url='http://google.com' data-picture-url='http://plnk.co/img/plunker.png' data-caption='Testing Facebook Shae' data-shares='shares'>
-<a href>Share To facebook<a>
-<p>Number of Shares: {{shares}}</p>
-</div>
+ <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>{{ shares }}</a>
 ```
-As we are using Facebook share API and not the facebook share button, Hence you will have to style your own Facebook button. and also display the share count, which the directive fetches from a diffrent API . The directive has transclusion set to true.
+As we are using Facebook share API and not the facebook share button, you will have to style your own Facebook button, or use the provided stylesheet. You also need to display the share count, which the directive fetches from a diffrent API. The directive has transclusion set to true. The latest Facebook share API only allows for a URL to be supplied, it will scrape the other data (image, title, description) from the supplied URL.
 
 The Attributes for the directives are
 ```js
 /*
-data-name: Name of the Shared Content
 data-url: URL of the Shared Content
-data-picture-url: A Prievew Image will be shown of the shared content.
-data-caption: Summary of the facebook content
 data-shares: The Scope variable on which share count will be binded to. This lets you put
 multiple share buttons on a single page and bind the share count to the respective model object.
 */
