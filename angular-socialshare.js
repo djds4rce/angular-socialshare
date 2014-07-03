@@ -50,24 +50,45 @@ angular.module('djds4rce.angular-socialshare', [])
       shares: '=' 
     }, 
     transclude: true,
-    template: '<div ng-transclude></div>',
+    template: '<div class="facebookButton">' + 
+      '<div class="pluginButton">' + 
+        '<div class="pluginButtonContainer">' + 
+          '<div class="pluginButtonImage">' + 
+            '<button type="button">' + 
+              '<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' + 
+            '</button>' + 
+          '</div>' + 
+          '<span class="pluginButtonLabel">Share</span>' + 
+        '</div>' + 
+      '</div>' + 
+    '</div>' + 
+    '<div class="facebookCount">' +
+      '<div class="pluginCountButton pluginCountNum">' + 
+        '<span ng-transclude></span>' +
+      '</div>' + 
+      '<div class="pluginCountButtonNub"><s></s><i></i></div>' + 
+    '</div>',
     link: function(scope, element, attr) {
       if(attr.shares){
         $http.get('https://api.facebook.com/method/links.getStats?urls='+attr.url+'&format=json').success(function(res){
-          scope.shares = res[0].share_count;
+            var count = res[0].share_count;
+            if(count.length > 6){
+              count = count.slice(0, -6) + 'M';
+            }else if(count.length > 3){
+              count = count.slice(0, -3) + 'k';
+            }
+            scope.shares = count;
         }).error(function(){
           scope.shares = 0;
         });
       }
       $timeout(function(){
-        element.bind('click',function(){
+        element.bind('click',function(e){
           FB.ui(
-            {method: 'feed',
-              name: attr.name,
-              link: attr.url,
-              picture: attr.pictureUrl,
-              caption: attr.caption
+            {method: 'share',
+              link: attr.url
           });
+          e.preventDefault();
         });
       });
     }
