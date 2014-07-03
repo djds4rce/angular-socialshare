@@ -9,9 +9,10 @@ Install the library through bower.
 ```js
 bower install angular-socialshare.
 ```
-Include the script in your html file.
+Include the script (and optional css file) in your html file.
 ```html
-<script src="bower_components/angular-social.min.js"></script>
+<style rel='stylesheet' type='text/css' href="bower_components/angular-socialshare/angular-socialshare.min.css"></style>
+<script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
 ```
 
 Add to your APP's dependency.
