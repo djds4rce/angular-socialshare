@@ -62,7 +62,7 @@ Include the twitter javascript in your HTML.
 ```
 Add Directive to the element where you want to display your Twitter Button
 ```html
-<a twitter  data-lang="en" data-count='vertical' data-url='http://google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' ></a>
+<a twitter  data-lang="en" data-count='horizontal' data-url='http://google.com' data-via='notsosleepy' data-size="medium" data-text='Testing Twitter Share' ></a>
 ```
 The Attributes for the directives are
 ```js
@@ -100,13 +100,14 @@ multiple share buttons on a single page and bind the share count to the respecti
 Google +
 ----
 ```html
- <div gplus class="g-plus" data-size="tall" data-annotation="vertical-bubble" data-href='http://google.com' data-action='share'></div>
+ <div gplus class="g-plus" data-size="tall" data-annotation="bubble" data-href='http://google.com' data-action='share'></div>
 ```
 For more information on the share button attributes check the [Google Share Documentation]
 >If you change the class of the button to `g-plusone' it will be converted to a google plus one button.
 
 
 **Made with Love by [Djds4rce]**
+**Additions with ♡ by [haxxxton]**
 
 
 
@@ -114,3 +115,4 @@ For more information on the share button attributes check the [Google Share Docu
 [Demo]:http://plnkr.co/edit/zO5ujLhFP3yT4eKJcAmz?p=preview    
 [Google Share Documentation]:https://developers.google.com/+/web/share/
 [Djds4rce]:http://djds4rce.wordpress.com/
+[haxxxton]:http://gaandder.com/
