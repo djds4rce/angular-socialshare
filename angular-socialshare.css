@@ -34,10 +34,14 @@
 }
 .facebookShare .facebookButton .pluginButton {
   background: #4c69ba;
-  background: -webkit-gradient(linear, center top, center bottom, from(#4c69ba), to(#3b55a0));
-  background: -webkit-linear-gradient(#4c69ba, #3b55a0);
+  background: -moz-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4c69ba), color-stop(100%, #3b55a0));
+  background: -webkit-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
+  background: -o-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
+  background: -ms-linear-gradient(top, #4c69ba 0%, #3b55a0 100%);
+  background: linear-gradient(to bottom, #4c69ba 0%, #3b55a0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c69ba', endColorstr='#3b55a0', GradientType=0);
   border: none;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -50,6 +54,7 @@
 }
 .facebookShare .facebookButton .pluginButton .pluginButtonContainer {
   -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.004);
 }
 .facebookShare .facebookButton .pluginButton .pluginButtonContainer .pluginButtonImage {
   display: inline-block;
@@ -102,7 +107,7 @@
 .facebookShare .facebookCount .pluginCountButton {
   background: white;
   border: 1px solid #9197a3;
-  -webkit-border-radius: 2px;
+  border-radius: 3px;
   color: #6a7180;
   display: inline-block;
   font-size: 11px;
@@ -118,7 +123,7 @@
   display: inline-block;
   min-height: 12px;
   min-width: 4px;
-  color:#333;
+  color: #333;
 }
 .facebookShare .facebookCount .pluginCountButtonNub {
   height: 0;
@@ -141,4 +146,9 @@
   border-right-color: #fff;
   left: 2px;
   top: -7px;
+}
+@-moz-document url-prefix() { 
+  .facebookShare .facebookButton .pluginButton button .pluginButtonIcon{
+    margin:0 1px;
+  }
 }
