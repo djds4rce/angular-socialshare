@@ -14,15 +14,21 @@
   direction: ltr;
   cursor: pointer;
   font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  display:inline-block;
 }
 .facebookShare:hover .facebookButton .pluginButton,
 .facebookShare:active .facebookButton .pluginButton,
 .facebookShare:focus .facebookButton .pluginButton {
   background: #5b7bd5;
-  background: -webkit-gradient(linear, center top, center bottom, from(#5b7bd5), to(#4864b1));
-  background: -webkit-linear-gradient(#5b7bd5, #4864b1);
+  background: -moz-linear-gradient(top,  rgba(91,123,213,1) 0%, rgba(72,100,177,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(91,123,213,1)), color-stop(100%,rgba(72,100,177,1)));
+  background: -webkit-linear-gradient(top,  rgba(91,123,213,1) 0%,rgba(72,100,177,1) 100%);
+  background: -o-linear-gradient(top,  rgba(91,123,213,1) 0%,rgba(72,100,177,1) 100%);
+  background: -ms-linear-gradient(top,  rgba(91,123,213,1) 0%,rgba(72,100,177,1) 100%);
+  background: linear-gradient(to bottom,  rgba(91,123,213,1) 0%,rgba(72,100,177,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b7bd5', endColorstr='#4864b1',GradientType=0 );
   border-color: #5874c3 #4961a8 #41599f;
-  -webkit-box-shadow: inset 0 0 1px #607fd6;
+  box-shadow: inset 0 0 1px #607fd6;
 }
 .facebookShare .facebookButton {
   color: #3b5998;
@@ -106,7 +112,7 @@
 }
 .facebookShare .facebookCount .pluginCountButton {
   background: white;
-  border: 1px solid #9197a3;
+  border: 1px solid #bbb;
   border-radius: 3px;
   color: #6a7180;
   display: inline-block;
@@ -135,7 +141,7 @@
 }
 .facebookShare .facebookCount .pluginCountButtonNub s,
 .facebookShare .facebookCount .pluginCountButtonNub i {
-  border-color: transparent #9197a3;
+  border-color: transparent #bbb;
   border-style: solid;
   border-width: 4px 5px 4px 0;
   display: block;
