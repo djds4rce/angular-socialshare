@@ -36,7 +36,7 @@ Facebook share uses facebook API which requires us to provide a APPID. Register 
 
 ```js
 angular.module('testing').run(function($FB){
-  $FB.init('386469651480295');
+  $FB.init('YOUR_APPID');
 });
 ```
 Use the Facebook Directive
