@@ -43,7 +43,7 @@ Use the Facebook Directive
 ```html
  <a facebook class="facebookShare" data-url='http://google.com' data-shares='shares'>{{ shares }}</a>
 ```
-As we are using Facebook share API and not the facebook share button, you will have to style your own Facebook button, or use the provided stylesheet. You also need to display the share count, which the directive fetches from a diffrent API. The directive has transclusion set to true. The latest Facebook share API only allows for a URL to be supplied, it will scrape the other data (image, title, description) from the supplied URL.
+As we are using Facebook share API and not the facebook share button, you will have to style your own Facebook button, or use the provided stylesheet that has styles for the horizontal count button. You also need to display the share count, which the directive fetches from a diffrent API. The directive has transclusion set to true. The latest Facebook share API only allows for a URL to be supplied, it will scrape the other data (image, title, description) from the supplied URL.
 
 The Attributes for the directives are
 ```js
@@ -76,17 +76,15 @@ data-via: User handle which will be tagged in the tweet
 For options checkout https://dev.twitter.com/docs/tweet-button
 */
 ```
-Linkdin
+Linkedin
 ----
-Although Linkdin has a share button and also a Javascript share API it does not take the title and the content as its parameters hence we will have to use the raw share URL to share the content.
+Although Linkedin has a share button and also a Javascript share API it does not take the title and the content as its parameters hence we will have to use the raw share URL to share the content.
 
-Use the Linkdin Directive
+Use the Linkedin Directive
 ```html
-<div linkdin data-url='http://google.com' data-title='Linkdin Share' data-summary="testing Linkdin Share" data-shares='linkdinshares'>
-<a href>Share to Linkdin</a>
-<p>Number of Shares:{{linkdinshares}}</p>
+<div class="linkedinShare" linkdin data-url='http://www.google.com.au' data-title='Linkedin Share' data-summary="testing Linkedin Share" data-shares='linkedinshares'>{{linkedinshares}}</div>
 ```
-Likdin Directive works similar to the Facebook Mechanism. This will force us to add our own style to the button and also display count which is fetched by the directive through a diffrent API.
+Linkedin Directive works similar to the Facebook Mechanism. This will force us to add our own style to the button and also display count which is fetched by the directive through a diffrent API. The supplied stylesheet contains styling for the horizontal styled button.
 
 The Attributes for the directives are
 ```js
