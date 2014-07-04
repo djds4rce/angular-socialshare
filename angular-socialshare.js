@@ -86,7 +86,7 @@ angular.module('djds4rce.angular-socialshare', [])
         element.bind('click',function(e){
           FB.ui(
             {method: 'share',
-              link: attr.url
+              href: attr.url
           });
           e.preventDefault();
         });
