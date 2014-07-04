@@ -113,6 +113,6 @@ For more information on the share button attributes check the [Google Share Docu
 
 
 [Explained Here]:http://ericduran.io/2013/05/31/angular-html5Mode-with-yeoman/
-[Demo]:http://plnkr.co/edit/Cah9FtwXDrUMQjChdBG2?p=preview    
+[Demo]:http://plnkr.co/edit/zO5ujLhFP3yT4eKJcAmz?p=preview    
 [Google Share Documentation]:https://developers.google.com/+/web/share/
 [Djds4rce]:http://djds4rce.wordpress.com/
