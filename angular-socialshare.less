@@ -1,0 +1,321 @@
+.facebookShare{
+    border: none;
+    visibility: visible;
+    width: auto;
+    height: 22px;
+    background: transparent;
+    overflow: hidden;
+    -webkit-text-size-adjust: none;
+    color: #333;
+    line-height: 1.28;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    direction: ltr;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif;
+    display: inline-block;
+
+    &:hover .facebookButton .pluginButton,
+    &:active .facebookButton .pluginButton,
+    &:focus .facebookButton .pluginButton{
+        background: #5b7bd5;
+        background: -moz-linear-gradient(top,  #5b7bd5 0%, #4864b1 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5b7bd5), color-stop(100%,#4864b1));
+        background: -webkit-linear-gradient(top,  #5b7bd5 0%,#4864b1 100%);
+        background: -o-linear-gradient(top,  #5b7bd5 0%,#4864b1 100%);
+        background: -ms-linear-gradient(top,  #5b7bd5 0%,#4864b1 100%);
+        background: linear-gradient(to bottom,  #5b7bd5 0%,#4864b1 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b7bd5', endColorstr='#4864b1',GradientType=0 );
+        border-color: #5874c3 #4961a8 #41599f;
+        box-shadow: inset 0 0 1px #607fd6;
+    }
+
+    .facebookButton{
+        color:#3b5998;
+        text-decoration: none;
+        font-size: 11px;
+        text-align: left;
+        display: inline-block;
+        width:55px;
+
+        .pluginButton{
+            background: #4c69ba;
+            background: -moz-linear-gradient(top,  #4c69ba 0%, #3b55a0 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c69ba), color-stop(100%,#3b55a0));
+            background: -webkit-linear-gradient(top,  #4c69ba 0%,#3b55a0 100%);
+            background: -o-linear-gradient(top,  #4c69ba 0%,#3b55a0 100%);
+            background: -ms-linear-gradient(top,  #4c69ba 0%,#3b55a0 100%);
+            background: linear-gradient(to bottom,  #4c69ba 0%,#3b55a0 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c69ba', endColorstr='#3b55a0',GradientType=0 );
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+            padding: 0;
+            text-shadow: 0 -1px 0 #354c8c;
+            white-space: nowrap;
+
+            .pluginButtonContainer {
+                 -webkit-font-smoothing: antialiased;
+                 text-shadow: 1px 1px 1px rgba(255,255,255,0.004);
+
+                .pluginButtonImage {
+                    display: inline-block;
+                }
+            }
+            button {
+                background: transparent;
+                border: 0;
+                color: inherit;
+                cursor: pointer;
+                font: inherit;
+                font-weight: bold;
+                margin: -1px;
+                outline: none;
+                padding: 0;
+                text-shadow: 0 -1px 0 #354c8c;
+
+                .pluginButtonIcon {
+                    height: 14px;
+                    left: 0;
+                    margin: 0 4px 0 4px;
+                    position: relative;
+                    top: 3px;
+                    vertical-align: top;
+                    width: 14px;
+                }
+                .sp_plugin-button-2x {
+                    background-image: url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y5/r/KxVPs0eEy36.png);
+                    background-size: 30px 72px;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    height: 14px;
+                    width: 14px;
+                }
+                .sx_plugin-button-2x_favblue {
+                    background-position: 0 -42px;
+                }
+                i.img {
+                    -ms-high-contrast-adjust: none;
+                    _overflow: hidden;
+                }
+            }
+            .pluginButtonLabel {
+                padding: 0 5px 0 0;
+                position: relative;
+                vertical-align: top;
+            }
+        }
+    }
+    .facebookCount{
+        display: inline-block;
+        width: auto;
+
+        .pluginCountButton {
+            background: white;
+            border: 1px solid #bbb;
+            border-radius: 3px;
+            color: #6a7180;
+            display: inline-block;
+            font-size: 11px;
+            height: auto;
+            line-height: 18px;
+            margin-left: 6px;
+            min-width: 15px;
+            padding: 0 3px;
+            text-align: center;
+            white-space: nowrap;
+
+            span{
+                display: inline-block;
+                min-height:12px;
+                min-width:4px;
+                color:#333;
+            }
+        }
+        .pluginCountButtonNub {
+            height: 0;
+            left: 2px;
+            position: relative;
+            top: -15px;
+            width: 5px;
+            z-index: 2;
+
+            s,
+            i {
+                border-color: transparent #bbb;
+                border-style: solid;
+                border-width: 4px 5px 4px 0;
+                display: block;
+                position: relative;
+                top: 1px;
+            }
+            i {
+                border-right-color: #fff;
+                left: 2px;
+                top: -7px;
+            }
+        }
+    }
+}
+@-moz-document url-prefix() { 
+  .facebookShare .facebookButton .pluginButton button .pluginButtonIcon{
+    margin:0 1px;
+  }
+}
+.linkedinShare{
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    padding:0;
+    margin: 0;
+    position: relative;
+    border:0;
+    text-decoration: none;
+    height:20px;
+    cursor: pointer;
+
+    &:hover .linkedinButton .pluginButtonLabel,
+    &:active .linkedinButton .pluginButtonLabel,
+    &:focus .linkedinButton .pluginButtonLabel{
+        border: 1px solid #000;
+        border-top-color: #ABABAB;
+        border-right-color: #9A9A9A;
+        border-bottom-color: #787878;
+        border-left-color: #04568B;
+        border-left: 0;
+        background: #ededed;
+        background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+        background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+        background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+        background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+        background: linear-gradient(to bottom,  #ededed 0%,#dedede 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+    }
+
+    .linkedinButton{
+        display: inline-block;
+        width: 59px;
+        height:20px;
+        padding: 0;
+        margin: 0;
+
+        .pluginButtonImage{
+            background-image: url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png);
+            background-position: 0px -276px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border: 0;
+            text-indent: -9999em;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            color: #069;
+        }
+        .pluginButtonLabel{
+            color: #333;
+            cursor: pointer;
+            display: block;
+            white-space: nowrap;
+            float: left;
+            margin-left: 1px;
+            overflow: hidden;
+            text-align: center;
+            height: 18px;
+            padding: 0 4px 0 23px;
+            border: 1px solid #000;
+            border-top-color: #E2E2E2;
+            border-right-color: #BFBFBF;
+            border-bottom-color: #B9B9B9;
+            border-left-color: #E2E2E2;
+            border-left: 0;
+            text-shadow: #FFFFFF -1px 1px 0;
+            line-height: 20px;
+            border-radius: 2px;
+            background-color: #ECECEC;
+            background: -moz-linear-gradient(top,  #fefefe 0%, #ececec 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ececec));
+            background: -webkit-linear-gradient(top,  #fefefe 0%,#ececec 100%);
+            background: -o-linear-gradient(top,  #fefefe 0%,#ececec 100%);
+            background: -ms-linear-gradient(top,  #fefefe 0%,#ececec 100%);
+            background: linear-gradient(to bottom,  #fefefe 0%,#ececec 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ececec',GradientType=0 );
+
+            span{
+                color: #333;
+                font-size: 11px;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                background: transparent none;
+                vertical-align: top;
+                height: 18px;
+                line-height: 20px;
+                float: none;
+            }
+        }
+    }
+    .linkedinCount{
+        padding: 0px;
+        margin: 0px;
+        text-indent: 0px;
+        display: inline-block;
+        vertical-align: baseline;
+
+        .pluginCountButton{
+            display: inline-block;
+            overflow: visible;
+            position: relative;
+            height: 18px;
+            padding-left: 2px;
+
+            .pluginCountButtonRight{
+                display: block;
+                float: left;
+                height: 18px;
+                padding-right: 4px;
+                background-image: url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png);
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-position: right -100px;
+
+                .pluginCountButtonLeft{
+                    display: block;
+                    float: left;
+                    padding-left: 8px;
+                    text-align: center;
+                    background-image: url(https://www.linkedin.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png);
+                    background-color: transparent;
+                    background-repeat: no-repeat;
+                    background-position: 0px -60px;
+
+                    span{
+                        display: inline;
+                        font-size: 11px;
+                        color: #04558B;
+                        font-weight: bold;
+                        font-family: Arial, sans-serif;
+                        line-height: 18px;
+                        padding: 0 2px;
+                    }
+                }
+            }
+        }
+    }
+}
