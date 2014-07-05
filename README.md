@@ -105,6 +105,93 @@ Google +
 For more information on the share button attributes check the [Google Share Documentation]
 >If you change the class of the button to `g-plusone' it will be converted to a google plus one button.
 
+Tumblr
+----
+
+
+####Link Share
+
+```html
+<div tumblr-text data-url='http://google.com' data-name='Sharing to Tumblr' data-title='test' data-buttontext='Sharing Text' data-styling="display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;" data-description='this is awesome'></div>  
+
+```
+The Attributes for the directives are
+```js
+/*
+data-url: URL of the content to be shared
+data-name: Name of the content URL
+data-title(Optional): Title of the button on hover
+data-description: Description of the URL
+data-style(Optional): Style of the button
+*/
+```
+
+####Qoute Share
+
+```html
+<div tumblr-qoute data-qoute='Texting Tumblr Qoute share' data-source='http://djds4rce.github.io'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-source: Source URL of the qoute to be shared
+data-qoute: Qoute to be shared
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
+```
+
+####Image Share
+
+```html
+<div tumblr-image data-source='http://plnkr.co/img/plunker.png' data-caption='Image Share' data-clickthru='http://google.com'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-source: Source URL of the Image to be shared
+data-caption: Caption for the image
+data-clickthru: clickthru URL for the image
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
+```
+
+####Image Share
+
+```html
+<div tumblr-video data-embedcode='<iframe width="560" height="315" src="//www.youtube.com/embed/aqHBLS_6gF8" frameborder="0" allowfullscreen></iframe>'></div>  
+```
+The Attributes for the directives are
+```js
+/*
+data-embedcode: Embed code for the external video
+data-caption: Caption for the Video
+data-title(Optional): Title of the button on hover
+data-style(Optional): Style of the button
+*/
+```
+
+
+Pinterest
+----
+
+```html
+<div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
+```
+
+The Attributes for the directives are
+
+```js
+/*
+data-href: Url To be shared
+data-Description: Description of the content
+data-img: Image for the Pin
+data-pin-do(Optional): Type of pin
+data-pin-config(Optional): Pin count Orientation 'beside' or 'above'
+*/
+```
+
 
 **Made with Love by [Djds4rce]**
 **Additions with ♡ by [haxxxton]**
@@ -112,7 +199,7 @@ For more information on the share button attributes check the [Google Share Docu
 
 
 [Explained Here]:http://ericduran.io/2013/05/31/angular-html5Mode-with-yeoman/
-[Demo]:http://plnkr.co/edit/zO5ujLhFP3yT4eKJcAmz?p=preview    
+[Demo]:http://plnkr.co/edit/Cah9FtwXDrUMQjChdBG2?p=info    
 [Google Share Documentation]:https://developers.google.com/+/web/share/
 [Djds4rce]:http://djds4rce.wordpress.com/
 [haxxxton]:http://gaandder.com/

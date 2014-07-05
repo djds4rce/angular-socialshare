@@ -52,41 +52,41 @@ angular.module('djds4rce.angular-socialshare', [])
     transclude: true,
     template: '<div class="facebookButton">' + 
       '<div class="pluginButton">' + 
-        '<div class="pluginButtonContainer">' + 
-          '<div class="pluginButtonImage">' + 
-            '<button type="button">' + 
-              '<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' + 
-            '</button>' + 
-          '</div>' + 
-          '<span class="pluginButtonLabel">Share</span>' + 
-        '</div>' + 
+      '<div class="pluginButtonContainer">' + 
+      '<div class="pluginButtonImage">' + 
+      '<button type="button">' + 
+      '<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' + 
+      '</button>' + 
       '</div>' + 
-    '</div>' + 
-    '<div class="facebookCount">' +
+      '<span class="pluginButtonLabel">Share</span>' + 
+      '</div>' + 
+      '</div>' + 
+      '</div>' + 
+      '<div class="facebookCount">' +
       '<div class="pluginCountButton pluginCountNum">' + 
-        '<span ng-transclude></span>' +
+      '<span ng-transclude></span>' +
       '</div>' + 
       '<div class="pluginCountButtonNub"><s></s><i></i></div>' + 
-    '</div>',
+      '</div>',
     link: function(scope, element, attr) {
       if(attr.shares){
         $http.get('https://api.facebook.com/method/links.getStats?urls='+attr.url+'&format=json').success(function(res){
-            var count = res[0].share_count.toString();
-            var decimal = '';
-            if(count.length > 6){
-              if(count.slice(-6,-5) != "0"){
-                decimal = '.'+count.slice(-6,-5);
-              }
-              count = count.slice(0, -6);
-              count = count + decimal + 'M';
-            }else if(count.length > 3){
-              if(count.slice(-3,-2) != "0"){
-                decimal = '.'+count.slice(-3,-2);
-              }
-              count = count.slice(0, -3);
-              count = count + decimal + 'k';
+          var count = res[0].share_count.toString();
+          var decimal = '';
+          if(count.length > 6){
+            if(count.slice(-6,-5) != "0"){
+              decimal = '.'+count.slice(-6,-5);
             }
-            scope.shares = count;
+            count = count.slice(0, -6);
+            count = count + decimal + 'M';
+          }else if(count.length > 3){
+            if(count.slice(-3,-2) != "0"){
+              decimal = '.'+count.slice(-3,-2);
+            }
+            count = count.slice(0, -3);
+            count = count + decimal + 'k';
+          }
+          scope.shares = count;
         }).error(function(){
           scope.shares = 0;
         });
@@ -127,22 +127,22 @@ angular.module('djds4rce.angular-socialshare', [])
     transclude: true,
     template: '<div class="linkedinButton">' + 
       '<div class="pluginButton">' + 
-        '<div class="pluginButtonContainer">' + 
-          '<div class="pluginButtonImage">in' + 
-          '</div>' + 
-          '<span class="pluginButtonLabel"><span>Share</span></span>' + 
-        '</div>' + 
+      '<div class="pluginButtonContainer">' + 
+      '<div class="pluginButtonImage">in' + 
       '</div>' + 
-    '</div>' + 
-    '<div class="linkedinCount">' +
+      '<span class="pluginButtonLabel"><span>Share</span></span>' + 
+      '</div>' + 
+      '</div>' + 
+      '</div>' + 
+      '<div class="linkedinCount">' +
       '<div class="pluginCountButton">' + 
-        '<div class="pluginCountButtonRight">' +
-          '<div class="pluginCountButtonLeft">' +
-            '<span ng-transclude></span>' +
-          '</div>' +
-        '</div>' +
+      '<div class="pluginCountButtonRight">' +
+      '<div class="pluginCountButtonLeft">' +
+      '<span ng-transclude></span>' +
+      '</div>' +
+      '</div>' +
       '</div>' + 
-    '</div>',
+      '</div>',
     link: function(scope, element, attr) {
       if(attr.shares){
         $http.jsonp('http://www.linkedin.com/countserv/count/share?url='+attr.link+'&callback=JSON_CALLBACK&format=jsonp').success(function(res){
@@ -171,4 +171,54 @@ angular.module('djds4rce.angular-socialshare', [])
       }
     }
   };
+}]).directive('tumblrText',[function(){
+  return {
+    link: function(scope,element,attr){
+      var tumblr_button = document.createElement("a");
+      tumblr_button.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(attr.url) + "&name=" + encodeURIComponent(attr.name) + "&description=" + encodeURIComponent(attr.description));
+      tumblr_button.setAttribute("title", attr.title||"Share on Tumblr");
+      tumblr_button.setAttribute("style", attr.styling||"display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+      element.append(tumblr_button);
+    }
+
+  }  
+}]).directive('tumblrQoute',[function(){
+  return {
+    link: function(scope,element,attr){
+      var tumblr_button = document.createElement("a");
+      tumblr_button.setAttribute("href", "http://www.tumblr.com/share/quote?quote=" + encodeURIComponent(attr.qoute) + "&source=" + encodeURIComponent(attr.source));
+      tumblr_button.setAttribute("title", attr.title||"Share on Tumblr");
+      tumblr_button.setAttribute("style", attr.styling||"display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+      element.append(tumblr_button);
+    }
+  }  
+}]).directive('tumblrImage',[function(){
+  return {
+    link: function(scope,element,attr){
+      var tumblr_button = document.createElement("a");
+      tumblr_button.setAttribute("href", "http://www.tumblr.com/share/photo?source=" + encodeURIComponent(attr.source) + "&caption=" + encodeURIComponent(attr.caption) + "&clickthru=" + encodeURIComponent(attr.clickthru));
+      tumblr_button.setAttribute("title", attr.title||"Share on Tumblr");
+      tumblr_button.setAttribute("style", attr.styling||"display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+      element.append(tumblr_button);
+    }
+  }
+}]).directive('tumblrVideo',[function(){
+  return {
+    link: function(scope,element,attr){
+      var tumblr_button = document.createElement("a");
+      tumblr_button.setAttribute("href", "http://www.tumblr.com/share/video?embed=" + encodeURIComponent(attr.embedcode) + "&caption=" + encodeURIComponent(attr.caption));
+      tumblr_button.setAttribute("title", attr.title||"Share on Tumblr");
+      tumblr_button.setAttribute("style", attr.styling||"display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+      element.append(tumblr_button);
+    }
+  }
+}]).directive('pintrest',[function(){
+  return {
+    template: '<a href="{{href}}" data-pin-do="{{pinDo}}" data-pin-config="{{pinConfig}}"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>',
+    link: function(scope,element,attr){
+      scope.href = '//www.pinterest.com/pin/create/button/?url='+encodeURIComponent(attr.href)+'&media='+encodeURIComponent(attr.img)+'&description='+encodeURIComponent(attr.description);
+      scope.pinDo = attr.pinDo||"buttonPin";
+      scope.pinConfig = attr.pinConfig||"beside";
+    }
+  }
 }]);
