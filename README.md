@@ -110,6 +110,11 @@ Tumblr
 
 
 ####Link Share
+Include the tumblr javascript in your HTML. 
+```html
+<script src="http://platform.tumblr.com/v1/share.js"></script>
+
+```
 
 ```html
 <div tumblr-text data-url='http://google.com' data-name='Sharing to Tumblr' data-title='test' data-buttontext='Sharing Text' data-styling="display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;" data-description='this is awesome'></div>  
@@ -176,6 +181,14 @@ data-style(Optional): Style of the button
 Pinterest
 ----
 
+Include the  Pinterest javascript in your HTML. 
+```html
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+```
+
+
+####Usage
 ```html
 <div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
 ```
