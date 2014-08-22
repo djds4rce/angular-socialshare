@@ -102,23 +102,78 @@ angular.module('djds4rce.angular-socialshare', [])
       });
     }
   };
-}]).directive('twitter',['$timeout',function($timeout) {
-  return {
-    link: function(scope, element, attr) {
-      $timeout(function() {
-        twttr.widgets.createShareButton(
-          attr.url,
-          element[0],
-          function() {}, {
-            count: attr.count,
-            text: attr.text,
-            via: attr.via,
-            size: attr.size
-          }
-        );
-      });
-    }
-  };
+}])
+
+	/**
+	 * @ngdoc directive
+	 * @name twitter
+	 * @restrict A
+	 * @requires
+	 * @scope
+	 * @description
+	 *
+	 * Adds Twitter widget based on given params
+	 *
+	 * @usage
+	 *	<a twitter id="twitter_share" class="th-icon-group__share" data-params="socialShare.twitter" ></a>
+	 *
+	 * @example
+	 <example module="app">
+	 <file name="script.js">
+	 angular.module('app', [])
+	 .controller('ImageCtrl',
+	 function ($scope) {
+							$scope.socialShare = {};
+
+							var twitter = {};
+							twitter.text = 'Magic mirror';
+							twitter.via = 'Volusion';
+							twitter.count = 'horizontal';
+							twitter.size = 'medium';
+							twitter.lang = 'en';
+							twitter.url = 'http://www.volusion.com';
+
+							$scope.socialShare.twitter = twitter;
+
+							})
+	 </file>
+	 <file name="index.html">
+	 <a twitter id="twitter_share" class="th-icon-group__share" data-params="socialShare.twitter" ></a>
+	 </file>
+	 </example>
+	 */
+	.directive('twitter', [function () {
+		return {
+			scope: {
+				params: '='
+			},
+			link: function (scope, element, attr) {
+				scope.$watch('params', function (newParams, oldParams) {
+					// params.text is retrieved async - do nothing until is populated
+					if (newParams.text === undefined || newParams.text === oldParams.text) {
+						return;
+					}
+
+					// remove existing widget (iframe)
+					if (element.find('iframe').length > 0) {
+						element.find('iframe').remove();
+					}
+
+					// create new widget
+					twttr.widgets.createShareButton(
+						attr.url,
+						element[0],
+						function () {
+						}, {
+							text : scope.params.text,
+							count: scope.params.count,
+							via  : scope.params.via,
+							size : scope.params.size
+						}
+					);
+				}, true); // enables deep watch over params obj
+			}
+		};
 }]).directive('linkedin', ['$timeout','$http', '$window',function($timeout,$http,$window) {
   return {
     scope: {
