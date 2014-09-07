@@ -102,12 +102,12 @@ angular.module('djds4rce.angular-socialshare', [])
       });
     }
   };
-}]).directive('twitter',['$timeout',function($timeout) {
+}]).directive('twitter',['$timeout', '$window',function($timeout, $window) {
   return {
     link: function(scope, element, attr) {
       $timeout(function() {
         twttr.widgets.createShareButton(
-          attr.url,
+          attr.url || $window.location.href,
           element[0],
           function() {}, {
             count: attr.count,
