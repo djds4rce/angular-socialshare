@@ -71,7 +71,7 @@ angular.module('djds4rce.angular-socialshare', [])
     link: function(scope, element, attr) {
       if(attr.shares){
         $http.get('https://api.facebook.com/method/links.getStats?urls='+attr.url+'&format=json').success(function(res){
-            var count = res[0].share_count.toString();
+            var count = res[0] ? res[0].share_count.toString() : 0;
             var decimal = '';
             if(count.length > 6){
               if(count.slice(-6,-5) != "0"){
