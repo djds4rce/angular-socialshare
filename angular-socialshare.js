@@ -2,7 +2,7 @@
 'use strict';
 
 /*
- *  * angular-socialshare v0.0.1
+ *  * angular-socialshare v0.0.2
  *   * ♡ CopyHeart 2014 by Dayanand Prabhu http://djds4rce.github.io
  *    * Copying is an act of love. Please copy.
  *     */
