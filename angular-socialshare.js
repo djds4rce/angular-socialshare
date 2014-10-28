@@ -106,16 +106,18 @@ angular.module('djds4rce.angular-socialshare', [])
   return {
     link: function(scope, element, attr) {
       $timeout(function() {
-        twttr.widgets.createShareButton(
-          attr.url || $window.location.href,
-          element[0],
-          function() {}, {
-            count: attr.count,
-            text: attr.text,
-            via: attr.via,
-            size: attr.size
-          }
-        );
+        $timeout(function() {
+          twttr.widgets.createShareButton(
+            attr.url || $window.location.href,
+            element[0],
+            function() {}, {
+              count: attr.count,
+              text: attr.text,
+              via: attr.via,
+              size: attr.size
+            }
+          );
+        });
       });
     }
   };
@@ -145,7 +147,7 @@ angular.module('djds4rce.angular-socialshare', [])
     '</div>',
     link: function(scope, element, attr) {
       if(attr.shares){
-        $http.jsonp('http://www.linkedin.com/countserv/count/share?url='+attr.url+'&callback=JSON_CALLBACK&format=jsonp').success(function(res){
+        $http.jsonp('http://www.linkedin.com/countserv/count/share?url='+attr.link+'&callback=JSON_CALLBACK&format=jsonp').success(function(res){
           scope.shares = res.count.toLocaleString();
         }).error(function(){
           scope.shares = 0;
