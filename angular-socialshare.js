@@ -145,7 +145,7 @@ angular.module('djds4rce.angular-socialshare', [])
     '</div>',
     link: function(scope, element, attr) {
       if(attr.shares){
-        $http.jsonp('http://www.linkedin.com/countserv/count/share?url='+attr.link+'&callback=JSON_CALLBACK&format=jsonp').success(function(res){
+        $http.jsonp('http://www.linkedin.com/countserv/count/share?url='+attr.url+'&callback=JSON_CALLBACK&format=jsonp').success(function(res){
           scope.shares = res.count.toLocaleString();
         }).error(function(){
           scope.shares = 0;
