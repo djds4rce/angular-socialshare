@@ -216,3 +216,5 @@ data-pin-config(Optional): Pin count Orientation 'beside' or 'above'
 [Google Share Documentation]:https://developers.google.com/+/web/share/
 [Djds4rce]:http://djds4rce.wordpress.com/
 [haxxxton]:http://gaandder.com/
+
+Licenced Under MIT Licence. 
