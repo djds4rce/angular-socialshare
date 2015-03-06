@@ -9,7 +9,7 @@ As of Verstion 1 This directive supports two way binding of data, so now you can
 
 Future Plans
 ----
-Support syncronous loading of corresponding social plugin javascript assets.
+Support asyncronous loading of corresponding social plugin javascript assets.
 
 Getting Started
 -----
