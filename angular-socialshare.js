@@ -173,17 +173,35 @@ angular.module('djds4rce.angular-socialshare', [])
 		};
 	}]).directive('gplus', [function() {
 		return {
-			link: function(scope, element, attr) {
+			link: function(scope, element, attr) { 
+			  var googleShare = debounce(function(){
 				if (typeof gapi == "undefined") {
 					(function() {
 						var po = document.createElement('script');
 						po.type = 'text/javascript';
 						po.async = true;
-						po.src = 'https://apis.google.com/js/plusone.js';
+						po.src = 'https://apis.google.com/js/platform.js';
+						po.onload = renderGoogleButton;
 						var s = document.getElementsByTagName('script')[0];
 						s.parentNode.insertBefore(po, s);
 					})();
-				}
+				} else{
+				  renderGoogleButton();
+				} 
+			  },100);
+			  //voodo magic
+			  var renderGoogleButton = (function(ele,attr){
+			    return function(){
+			      var googleButton = document.createElement('div');
+			      var id = attr.id||randomString(5);
+			      attr.id = id;
+			      googleButton.setAttribute('id',id);
+			      element.innerHTML = '';
+			      element.append(googleButton);
+			      window.gapi.plusone.render(id,attr);
+			    }  
+			  }(element,attr));
+				attr.$observe('href',googleShare);
 			}
 		};
 	}]).directive('tumblrText', [function() {
@@ -288,3 +306,23 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+//http://stackoverflow.com/questions/1349404/generate-a-string-of-5-random-characters-in-javascript
+/**
+ * RANDOM STRING GENERATOR
+ *
+ * Info:      http://stackoverflow.com/a/27872144/383904
+ * Use:       randomString(length [,"A"] [,"N"] );
+ * Default:   return a random alpha-numeric string
+ * Arguments: If you use the optional "A", "N" flags:
+ *            "A" (Alpha flag)   return random a-Z string
+ *            "N" (Numeric flag) return random 0-9 string
+ */
+function randomString(len, an){
+    an = an&&an.toLowerCase();
+    var str="", i=0, min=an=="a"?10:0, max=an=="n"?10:62;
+    for(;i++<len;){
+      var r = Math.random()*(max-min)+min <<0;
+      str += String.fromCharCode(r+=r>9?r<36?55:61:48);
+    }
+    return str;
+}
