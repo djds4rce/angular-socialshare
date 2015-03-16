@@ -19,7 +19,7 @@ bower install angular-socialshare.
 ```
 Include the script (and optional css file) in your html file.
 ```html
-<style rel='stylesheet' type='text/css' href="bower_components/angular-socialshare/angular-socialshare.min.css"></style>
+<link rel='stylesheet' href="bower_components/angular-socialshare/angular-socialshare.min.css">
 <script src="bower_components/angular-socialshare/angular-socialshare.min.js"></script>
 ```
 
