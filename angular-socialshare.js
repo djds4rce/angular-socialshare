@@ -152,7 +152,7 @@ angular.module('djds4rce.angular-socialshare', [])
 			link: function(scope, element, attr) {
 				var renderLinkedinButton = debounce(function() {
 					if (attr.shares && attr.url) {
-						$http.jsonp('http://www.linkedin.com/countserv/count/share?url=' + attr.url + '&callback=JSON_CALLBACK&format=jsonp').success(function(res) {
+						$http.jsonp('https://www.linkedin.com/countserv/count/share?url=' + attr.url + '&callback=JSON_CALLBACK&format=jsonp').success(function(res) {
 							scope.shares = res.count.toLocaleString();
 						}).error(function() {
 							scope.shares = 0;
@@ -213,9 +213,9 @@ angular.module('djds4rce.angular-socialshare', [])
 			link: function(scope, element, attr) {
 				var tumblr_button = document.createElement("a");
 				var renderTumblrText = debounce(function() {
-					tumblr_button.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(attr.url) + "&name=" + encodeURIComponent(attr.name) + "&description=" + encodeURIComponent(attr.description));
+					tumblr_button.setAttribute("href", "https://www.tumblr.com/share/link?url=" + encodeURIComponent(attr.url) + "&name=" + encodeURIComponent(attr.name) + "&description=" + encodeURIComponent(attr.description));
 					tumblr_button.setAttribute("title", attr.title || "Share on Tumblr");
-					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('https://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
 					element[0].innerHTML = '';
 					element.append(tumblr_button);
 				}, 100);
@@ -230,9 +230,9 @@ angular.module('djds4rce.angular-socialshare', [])
 			link: function(scope, element, attr) {
 				var tumblr_button = document.createElement("a");
 				var renderTumblrQoute = debounce(function() {
-					tumblr_button.setAttribute("href", "http://www.tumblr.com/share/quote?quote=" + encodeURIComponent(attr.qoute) + "&source=" + encodeURIComponent(attr.source));
+					tumblr_button.setAttribute("href", "https://www.tumblr.com/share/quote?quote=" + encodeURIComponent(attr.qoute) + "&source=" + encodeURIComponent(attr.source));
 					tumblr_button.setAttribute("title", attr.title || "Share on Tumblr");
-					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('https://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
 					element[0].innerHTML = '';
 					element.append(tumblr_button);
 				}, 100);
@@ -245,9 +245,9 @@ angular.module('djds4rce.angular-socialshare', [])
 			link: function(scope, element, attr) {
 				var tumblr_button = document.createElement("a");
 				var renderTumblrImage = debounce(function() {
-					tumblr_button.setAttribute("href", "http://www.tumblr.com/share/photo?source=" + encodeURIComponent(attr.source) + "&caption=" + encodeURIComponent(attr.caption) + "&clickthru=" + encodeURIComponent(attr.clickthru));
+					tumblr_button.setAttribute("href", "https://www.tumblr.com/share/photo?source=" + encodeURIComponent(attr.source) + "&caption=" + encodeURIComponent(attr.caption) + "&clickthru=" + encodeURIComponent(attr.clickthru));
 					tumblr_button.setAttribute("title", attr.title || "Share on Tumblr");
-					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('https://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
 					element[0].innerHTML = '';
 					element.append(tumblr_button);
 				}, 100);
@@ -261,9 +261,9 @@ angular.module('djds4rce.angular-socialshare', [])
 			link: function(scope, element, attr) {
 				var tumblr_button = document.createElement("a");
 				var renderTumblrVideo = debounce(function() {
-					tumblr_button.setAttribute("href", "http://www.tumblr.com/share/video?embed=" + encodeURIComponent(attr.embedcode) + "&caption=" + encodeURIComponent(attr.caption));
+					tumblr_button.setAttribute("href", "https://www.tumblr.com/share/video?embed=" + encodeURIComponent(attr.embedcode) + "&caption=" + encodeURIComponent(attr.caption));
 					tumblr_button.setAttribute("title", attr.title || "Share on Tumblr");
-					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+					tumblr_button.setAttribute("style", attr.styling || "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('https://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
 					element[0].innerHTML = '';
 					element.append(tumblr_button);
 				}, 100);
