@@ -62,6 +62,28 @@ multiple share buttons on a single page and bind the share count to the respecti
 */
 ```
 
+####Share via Feed Dialog
+The feed dialog works in the same way as the normal share dialog, but also has some addittional attributes available
+
+```html
+ <a facebook-feed-share class="facebookShare" data-url='http://google.com' data-shares='shares', data-description="Example text">{{ shares }}</a>
+```
+
+```js
+/*
+data-url: URL of the Shared Content
+data-shares: The Scope variable on which share count will be binded to. This lets you put
+multiple share buttons on a single page and bind the share count to the respective model object.
+data-picture: The URL of a picture attached to the share. The picture must be at least 200px by 200px.
+data-source: The URL of a media file (either SWF or MP3) attached to this share. If SWF, you must also specify picture to provide a thumbnail for the video.
+data-name: The name of the link attachment.
+data-caption: The caption of the link (appears beneath the link name). If not specified, this field is automatically populated with the URL of the link.
+data-description: The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
+data-properties: A JSON object of key/value pairs which will appear in the stream attachment beneath the description, with each property on its own line. Keys must be strings, and values can be either strings or JSON objects with the keys text and href.
+data-actions: A JSON array containing a single object describing the action link which will appear next to the 'Comment' and 'Like' link under posts. The contained object must have the keys name and link.
+*/
+```
+
 Twitter
 ----
 Include the twitter javascript in your HTML. 
