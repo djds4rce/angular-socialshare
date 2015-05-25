@@ -263,7 +263,7 @@ angular.module('djds4rce.angular-socialshare', [])
 						googleButton.setAttribute('id', id);
 						element.innerHTML = '';
 						element.append(googleButton);
-						if (attr.class.indexOf('g-plusone') != -1) {
+						if (attr.class && attr.class.indexOf('g-plusone') != -1) {
 							window.gapi.plusone.render(id, attr);
 						} else {
 							window.gapi.plus.render(id, attr);
