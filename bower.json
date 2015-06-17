@@ -1,6 +1,10 @@
 {
   "name": "angular-socialshare",
-  "main": "angular-socialshare.js",
+  "main": [
+    "angular-socialshare.js",
+    "angular-socialshare.css",
+    "angular-socialshare.less"
+  ],
   "version": "1.4.1",
   "authors": [
     "djds4rce <djd4rce@gmail.com>"
