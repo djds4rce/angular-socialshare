@@ -15,7 +15,7 @@ Getting Started
 -----
 Install the library through bower.
 ```js
-bower install angular-socialshare.
+bower install angular-socialshare
 ```
 Include the script (and optional css file) in your html file.
 ```html
