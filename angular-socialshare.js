@@ -180,7 +180,8 @@ angular.module('djds4rce.angular-socialshare', [])
 									count: attr.count,
 									text: attr.text,
 									via: attr.via,
-									size: attr.size
+									size: attr.size,
+									hashtags: attr.hashtags
 								}
 							);
 						});
