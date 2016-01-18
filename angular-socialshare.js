@@ -97,9 +97,9 @@ angular.module('djds4rce.angular-socialshare', [])
 							method: 'share',
 							href: attr.url
 						}, function(response){
-  						if (scope.callback !== undefined && typeof scope.callback === "function") {
-                scope.callback(response);
-  						}
+							if (scope.callback !== undefined && typeof scope.callback === "function") {
+								scope.callback(response);
+							}
 						});
 						e.preventDefault();
 					});
@@ -165,9 +165,9 @@ angular.module('djds4rce.angular-socialshare', [])
 							caption: attr.caption,
 							description: attr.description
 						}, function(response){
-  						if (scope.callback !== undefined && typeof scope.callback === "function") {
-                scope.callback(response);
-  						}
+							if (scope.callback !== undefined && typeof scope.callback === "function") {
+								scope.callback(response);
+							}
 						});
 						e.preventDefault();
 					});
