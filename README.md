@@ -1,7 +1,7 @@
 Angular Social Share
 =========
 
-Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible. 
+Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible.
 Checkout the [Demo].
 Change Log
 ----
@@ -35,7 +35,7 @@ angular.module('testing').config(function($locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
 });
 ```
-HTML5 Mode requires server configration [Explained Here] 
+HTML5 Mode requires server configration [Explained Here]
 
 
 Share on Facebook
@@ -59,6 +59,7 @@ The Attributes for the directives are
 data-url: URL of the Shared Content
 data-shares: The Scope variable on which share count will be binded to. This lets you put
 multiple share buttons on a single page and bind the share count to the respective model object.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
 */
 ```
 
@@ -81,12 +82,13 @@ data-caption: The caption of the link (appears beneath the link name). If not sp
 data-description: The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
 data-properties: A JSON object of key/value pairs which will appear in the stream attachment beneath the description, with each property on its own line. Keys must be strings, and values can be either strings or JSON objects with the keys text and href.
 data-actions: A JSON array containing a single object describing the action link which will appear next to the 'Comment' and 'Like' link under posts. The contained object must have the keys name and link.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
 */
 ```
 
 Twitter
 ----
-Include the twitter javascript in your HTML. 
+Include the twitter javascript in your HTML.
 ```html
 <script src="http://platform.twitter.com/widgets.js"></script>
 ```
@@ -140,7 +142,7 @@ Tumblr
 
 
 ####Link Share
-Include the tumblr javascript in your HTML. 
+Include the tumblr javascript in your HTML.
 ```html
 <script src="http://platform.tumblr.com/v1/share.js"></script>
 
@@ -211,7 +213,7 @@ data-style(Optional): Style of the button
 Pinterest
 ----
 
-Include the  Pinterest javascript in your HTML. 
+Include the  Pinterest javascript in your HTML.
 ```html
 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-build='parsePins'></script>
 
@@ -247,4 +249,4 @@ data-pin-config(Optional): Pin count Orientation 'beside' or 'above'
 [Djds4rce]:http://djds4rce.wordpress.com/
 [haxxxton]:http://gaandder.com/
 
-Licenced Under MIT Licence. 
+Licenced Under MIT Licence.
