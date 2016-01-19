@@ -59,6 +59,7 @@ The Attributes for the directives are
 data-url: URL of the Shared Content
 data-shares: The Scope variable on which share count will be binded to. This lets you put
 multiple share buttons on a single page and bind the share count to the respective model object.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
 */
 ```
 
@@ -81,6 +82,7 @@ data-caption: The caption of the link (appears beneath the link name). If not sp
 data-description: The description of the link (appears beneath the link caption). If not specified, this field is automatically populated by information scraped from the link, typically the title of the page.
 data-properties: A JSON object of key/value pairs which will appear in the stream attachment beneath the description, with each property on its own line. Keys must be strings, and values can be either strings or JSON objects with the keys text and href.
 data-actions: A JSON array containing a single object describing the action link which will appear next to the 'Comment' and 'Like' link under posts. The contained object must have the keys name and link.
+data-callback: The Scope function which will receive [FB's Response object](https://developers.facebook.com/docs/javascript/reference/FB.ui)
 */
 ```
 

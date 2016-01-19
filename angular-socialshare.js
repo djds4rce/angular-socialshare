@@ -45,6 +45,7 @@ angular.module('djds4rce.angular-socialshare', [])
 	}]).directive('facebook', ['$http', function($http) {
 		return {
 			scope: {
+				callback: '=',
 				shares: '='
 			},
 			transclude: true,
@@ -95,6 +96,10 @@ angular.module('djds4rce.angular-socialshare', [])
 						FB.ui({
 							method: 'share',
 							href: attr.url
+						}, function(response){
+							if (scope.callback !== undefined && typeof scope.callback === "function") {
+								scope.callback(response);
+							}
 						});
 						e.preventDefault();
 					});
@@ -104,6 +109,7 @@ angular.module('djds4rce.angular-socialshare', [])
 	}]).directive('facebookFeedShare', ['$http', function($http) {
 		return {
 			scope: {
+				callback: '=',
 				shares: '='
 			},
 			transclude: true,
@@ -158,6 +164,10 @@ angular.module('djds4rce.angular-socialshare', [])
 							name: attr.name,
 							caption: attr.caption,
 							description: attr.description
+						}, function(response){
+							if (scope.callback !== undefined && typeof scope.callback === "function") {
+								scope.callback(response);
+							}
 						});
 						e.preventDefault();
 					});
