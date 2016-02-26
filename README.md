@@ -1,7 +1,7 @@
 Angular Social Share
 =========
 
-Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible. 
+Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible.
 Checkout the [Demo].
 Change Log
 ----
@@ -35,7 +35,7 @@ angular.module('testing').config(function($locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
 });
 ```
-HTML5 Mode requires server configration [Explained Here] 
+HTML5 Mode requires server configration [Explained Here]
 
 
 Share on Facebook
@@ -44,7 +44,7 @@ Facebook share uses facebook API which requires us to provide a APPID. Register 
 
 ```js
 angular.module('testing').run(function($FB){
-  $FB.init('YOUR_APPID');
+  $FB.init('YOUR_APPID', 'COUNTRY_CODE'); // Country code format example: fr_FR
 });
 ```
 Use the Facebook Directive
@@ -88,7 +88,7 @@ data-callback: The Scope function which will receive [FB's Response object](http
 
 Twitter
 ----
-Include the twitter javascript in your HTML. 
+Include the twitter javascript in your HTML.
 ```html
 <script src="http://platform.twitter.com/widgets.js"></script>
 ```
@@ -142,14 +142,14 @@ Tumblr
 
 
 ####Link Share
-Include the tumblr javascript in your HTML. 
+Include the tumblr javascript in your HTML.
 ```html
 <script src="http://platform.tumblr.com/v1/share.js"></script>
 
 ```
 
 ```html
-<div tumblr-text data-url='http://google.com' data-name='Sharing to Tumblr' data-title='test' data-buttontext='Sharing Text' data-styling="display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;" data-description='this is awesome'></div>  
+<div tumblr-text data-url='http://google.com' data-name='Sharing to Tumblr' data-title='test' data-buttontext='Sharing Text' data-styling="display:inline-block; text-indent:-9999px; overflow:hidden; width:129px; height:20px; background:url('http://platform.tumblr.com/v1/share_3.png') top left no-repeat transparent;" data-description='this is awesome'></div>
 
 ```
 The Attributes for the directives are
@@ -166,7 +166,7 @@ data-style(Optional): Style of the button
 ####Qoute Share
 
 ```html
-<div tumblr-qoute data-qoute='Texting Tumblr Qoute share' data-source='http://djds4rce.github.io'></div>  
+<div tumblr-qoute data-qoute='Texting Tumblr Qoute share' data-source='http://djds4rce.github.io'></div>
 ```
 The Attributes for the directives are
 ```js
@@ -181,7 +181,7 @@ data-style(Optional): Style of the button
 ####Image Share
 
 ```html
-<div tumblr-image data-source='http://plnkr.co/img/plunker.png' data-caption='Image Share' data-clickthru='http://google.com'></div>  
+<div tumblr-image data-source='http://plnkr.co/img/plunker.png' data-caption='Image Share' data-clickthru='http://google.com'></div>
 ```
 The Attributes for the directives are
 ```js
@@ -197,7 +197,7 @@ data-style(Optional): Style of the button
 ####Image Share
 
 ```html
-<div tumblr-video data-embedcode='<iframe width="560" height="315" src="//www.youtube.com/embed/aqHBLS_6gF8" frameborder="0" allowfullscreen></iframe>'></div>  
+<div tumblr-video data-embedcode='<iframe width="560" height="315" src="//www.youtube.com/embed/aqHBLS_6gF8" frameborder="0" allowfullscreen></iframe>'></div>
 ```
 The Attributes for the directives are
 ```js
@@ -213,7 +213,7 @@ data-style(Optional): Style of the button
 Pinterest
 ----
 
-Include the  Pinterest javascript in your HTML. 
+Include the  Pinterest javascript in your HTML.
 ```html
 <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js" data-pin-build='parsePins'></script>
 
@@ -244,9 +244,9 @@ data-pin-config(Optional): Pin count Orientation 'beside' or 'above'
 
 
 [Explained Here]:http://ericduran.io/2013/05/31/angular-html5Mode-with-yeoman/
-[Demo]:http://plnkr.co/edit/Cah9FtwXDrUMQjChdBG2?p=info    
+[Demo]:http://plnkr.co/edit/Cah9FtwXDrUMQjChdBG2?p=info
 [Google Share Documentation]:https://developers.google.com/+/web/share/
 [Djds4rce]:http://djds4rce.wordpress.com/
 [haxxxton]:http://gaandder.com/
 
-Licenced Under MIT Licence. 
+Licenced Under MIT Licence.

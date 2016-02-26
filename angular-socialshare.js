@@ -9,9 +9,10 @@
 angular.module('djds4rce.angular-socialshare', [])
 	.factory('$FB', ['$window', function($window) {
 		return {
-			init: function(fbId) {
+			init: function(fbId, languageCode) {
 				if (fbId) {
 					this.fbId = fbId;
+					languageCode = languageCode || 'en_US';
 					$window.fbAsyncInit = function() {
 						FB.init({
 							appId: fbId,
@@ -31,7 +32,7 @@ angular.module('djds4rce.angular-socialshare', [])
 						js = d.createElement('script');
 						js.id = id;
 						js.async = true;
-						js.src = "//connect.facebook.net/en_US/all.js";
+						js.src = "//connect.facebook.net/" + languageCode + "/all.js";
 
 						ref.parentNode.insertBefore(js, ref);
 
