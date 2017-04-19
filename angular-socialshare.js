@@ -74,8 +74,8 @@ angular.module('djds4rce.angular-socialshare', [])
 					scope.translate = 'Share';
 				attr.$observe('url', function() {
 					if (attr.shares && attr.url) {
-						$http.get('https://api.facebook.com/method/links.getStats?urls=' + attr.url + '&format=json', {withCredentials: false}).success(function(res) {
-							var count = (res[0] && res[0].total_count) ? res[0].total_count.toString() : 0;
+						$http.get('http://graph.facebook.com/?id=' + attr.url + '&format=json', {withCredentials: false}).success(function(res) {
+							var count = (res && res.share && res.share.share_count) ?res.share.share_count.toString() : 0;
 							var decimal = '';
 							if (count.length > 6) {
 								if (count.slice(-6, -5) != "0") {
