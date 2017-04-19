@@ -47,7 +47,8 @@ angular.module('djds4rce.angular-socialshare', [])
 		return {
 			scope: {
 				callback: '=',
-				shares: '='
+				shares: '=',
+				translate: '=?'
 			},
 			transclude: true,
 			template: '<div class="facebookButton">' +
@@ -58,7 +59,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' +
 				'</button>' +
 				'</div>' +
-				'<span class="pluginButtonLabel">Share</span>' +
+				'<span class="pluginButtonLabel" ng-bind="translate"></span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
@@ -69,6 +70,8 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<div class="pluginCountButtonNub"><s></s><i></i></div>' +
 				'</div>',
 			link: function(scope, element, attr) {
+				if(scope.translate == undefined)
+					scope.translate = 'Share';
 				attr.$observe('url', function() {
 					if (attr.shares && attr.url) {
 						$http.get('https://api.facebook.com/method/links.getStats?urls=' + attr.url + '&format=json', {withCredentials: false}).success(function(res) {
@@ -111,7 +114,8 @@ angular.module('djds4rce.angular-socialshare', [])
 		return {
 			scope: {
 				callback: '=',
-				shares: '='
+				shares: '=',
+				translate: '=?'
 			},
 			transclude: true,
 			template: '<div class="facebookButton">' +
@@ -122,7 +126,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' +
 				'</button>' +
 				'</div>' +
-				'<span class="pluginButtonLabel">Share</span>' +
+				'<span class="pluginButtonLabel" ng-bind="translate"></span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
@@ -133,6 +137,8 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<div class="pluginCountButtonNub"><s></s><i></i></div>' +
 				'</div>',
 			link: function(scope, element, attr) {
+				if(scope.translate == undefined)
+					scope.translate = 'Share';
 				attr.$observe('url', function() {
 					if (attr.shares && attr.url) {
 						$http.get('https://api.facebook.com/method/links.getStats?urls=' + attr.url + '&format=json', {withCredentials: false}).success(function(res) {
@@ -202,7 +208,8 @@ angular.module('djds4rce.angular-socialshare', [])
 	}]).directive('linkedin', ['$timeout', '$http', '$window', function($timeout, $http, $window) {
 		return {
 			scope: {
-				shares: '='
+				shares: '=',
+				translate: '=?'
 			},
 			transclude: true,
 			template: '<div class="linkedinButton">' +
@@ -210,7 +217,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<div class="pluginButtonContainer">' +
 				'<div class="pluginButtonImage">in' +
 				'</div>' +
-				'<span class="pluginButtonLabel"><span>Share</span></span>' +
+				'<span class="pluginButtonLabel"><span ng-bind="translate"></span></span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
@@ -224,6 +231,8 @@ angular.module('djds4rce.angular-socialshare', [])
 				'</div>' +
 				'</div>',
 			link: function(scope, element, attr) {
+				if(scope.translate == undefined)
+					scope.translate = 'Share';
 				var renderLinkedinButton = debounce(function() {
 					if (attr.shares && attr.url) {
 						$http.jsonp('https://www.linkedin.com/countserv/count/share?url=' + attr.url + '&callback=JSON_CALLBACK&format=jsonp').success(function(res) {
