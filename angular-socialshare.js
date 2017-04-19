@@ -47,7 +47,8 @@ angular.module('djds4rce.angular-socialshare', [])
 		return {
 			scope: {
 				callback: '=',
-				shares: '='
+				shares: '=',
+				translate: '='
 			},
 			transclude: true,
 			template: '<div class="facebookButton">' +
@@ -58,7 +59,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' +
 				'</button>' +
 				'</div>' +
-				'<span class="pluginButtonLabel">Share</span>' +
+				'<span class="pluginButtonLabel" ng-bind="translate">Share</span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
@@ -111,7 +112,8 @@ angular.module('djds4rce.angular-socialshare', [])
 		return {
 			scope: {
 				callback: '=',
-				shares: '='
+				shares: '=',
+				translate: '='
 			},
 			transclude: true,
 			template: '<div class="facebookButton">' +
@@ -122,7 +124,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<i class="pluginButtonIcon img sp_plugin-button-2x sx_plugin-button-2x_favblue"></i>' +
 				'</button>' +
 				'</div>' +
-				'<span class="pluginButtonLabel">Share</span>' +
+				'<span class="pluginButtonLabel" ng-bind="translate">Share</span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
@@ -202,7 +204,8 @@ angular.module('djds4rce.angular-socialshare', [])
 	}]).directive('linkedin', ['$timeout', '$http', '$window', function($timeout, $http, $window) {
 		return {
 			scope: {
-				shares: '='
+				shares: '=',
+				translate: '='
 			},
 			transclude: true,
 			template: '<div class="linkedinButton">' +
@@ -210,7 +213,7 @@ angular.module('djds4rce.angular-socialshare', [])
 				'<div class="pluginButtonContainer">' +
 				'<div class="pluginButtonImage">in' +
 				'</div>' +
-				'<span class="pluginButtonLabel"><span>Share</span></span>' +
+				'<span class="pluginButtonLabel"><span ng-bind="translate">Share</span></span>' +
 				'</div>' +
 				'</div>' +
 				'</div>' +
