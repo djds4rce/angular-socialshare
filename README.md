@@ -63,7 +63,7 @@ data-callback: The Scope function which will receive [FB's Response object](http
 */
 ```
 
-####Share via Feed Dialog
+#### Share via Feed Dialog
 The feed dialog works in the same way as the normal share dialog, but also has some addittional attributes available
 
 ```html
@@ -141,8 +141,8 @@ Tumblr
 ----
 
 
-####Link Share
-Include the tumblr javascript in your HTML.
+#### Link Share
+Include the tumblr javascript in your HTML. 
 ```html
 <script src="http://platform.tumblr.com/v1/share.js"></script>
 
@@ -163,7 +163,7 @@ data-style(Optional): Style of the button
 */
 ```
 
-####Qoute Share
+#### Qoute Share
 
 ```html
 <div tumblr-qoute data-qoute='Texting Tumblr Qoute share' data-source='http://djds4rce.github.io'></div>
@@ -178,7 +178,7 @@ data-style(Optional): Style of the button
 */
 ```
 
-####Image Share
+#### Image Share
 
 ```html
 <div tumblr-image data-source='http://plnkr.co/img/plunker.png' data-caption='Image Share' data-clickthru='http://google.com'></div>
@@ -194,7 +194,7 @@ data-style(Optional): Style of the button
 */
 ```
 
-####Image Share
+#### Image Share
 
 ```html
 <div tumblr-video data-embedcode='<iframe width="560" height="315" src="//www.youtube.com/embed/aqHBLS_6gF8" frameborder="0" allowfullscreen></iframe>'></div>
@@ -220,7 +220,7 @@ Include the  Pinterest javascript in your HTML.
 ```
 
 
-####Usage
+#### Usage
 ```html
 <div pintrest data-href='http://google.com' data-description='testing share' data-img='http://plnkr.co/img/plunker.png' data-pin-do='buttonPin' data-pin-config='beside'></div>
 ```
