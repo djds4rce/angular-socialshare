@@ -35,7 +35,7 @@ angular.module('testing').config(function($locationProvider){
     $locationProvider.html5Mode(true).hashPrefix('!');
 });
 ```
-HTML5 Mode requires server configration [Explained Here]
+HTML5 Mode requires server configuration [Explained Here]
 
 
 Share on Facebook
