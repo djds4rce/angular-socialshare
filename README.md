@@ -1,11 +1,11 @@
 Angular Social Share
 =========
 
-Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these dirictives use alternative so that Meta data is displayed where it is possible.
+Angular Social Share is a collection of directives which lets you easily share your links various social networks. Currently Facebok, Google, Twitter and Linkdin are supported. Social Networks get the Meta data of the shared content like Title, Summary and Image from the Meta tags on the page by scraping. But Single Page Apps like Angular are unable to support crawling. But these directives use alternative so that Meta data is displayed where it is possible.
 Checkout the [Demo].
 Change Log
 ----
-As of Verstion 1 This directive supports two way binding of data, so now you can populate the data in the directive from a HTTP request.
+As of Version 1 This directive supports two way binding of data, so now you can populate the data in the directive from a HTTP request.
 
 Future Plans
 ----
